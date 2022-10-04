@@ -8,7 +8,7 @@
         <constructor-arg name="resourceFilePath" value="questions.csv"/>
     </bean>
 
-    <bean id="personService" class="ru.skilanov.spring.service.QuestionServiceImpl">
+    <bean id="personService" class="ru.skilanov.spring.service.implementation.QuestionServiceImpl">
         <constructor-arg name="questionDao" ref="questionDao"/>
     </bean>
 

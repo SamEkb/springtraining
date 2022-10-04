@@ -1,10 +1,13 @@
-package ru.skilanov.spring.service;
+package ru.skilanov.spring.service.implementation;
 
 import org.springframework.stereotype.Service;
 import ru.skilanov.spring.config.AppConfig;
 import ru.skilanov.spring.dao.QuestionDao;
 import ru.skilanov.spring.model.Question;
 import ru.skilanov.spring.model.Student;
+import ru.skilanov.spring.service.api.AnswerService;
+import ru.skilanov.spring.service.api.QuestionService;
+import ru.skilanov.spring.service.api.StudentService;
 
 import java.util.List;
 

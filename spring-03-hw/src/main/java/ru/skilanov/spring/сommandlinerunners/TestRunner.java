@@ -2,7 +2,7 @@ package ru.skilanov.spring.сommandlinerunners;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import ru.skilanov.spring.service.QuestionService;
+import ru.skilanov.spring.service.api.QuestionService;
 
 
 @Component

@@ -1,8 +1,9 @@
-package ru.skilanov.spring.service;
+package ru.skilanov.spring.service.implementation;
 
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 import ru.skilanov.spring.config.AppConfig;
+import ru.skilanov.spring.service.api.LocalizationService;
 
 @Service
 public class LocalizationServiceImpl implements LocalizationService {

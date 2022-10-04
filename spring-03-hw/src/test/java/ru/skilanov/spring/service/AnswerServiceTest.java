@@ -1,11 +1,9 @@
 package ru.skilanov.spring.service;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import ru.skilanov.spring.service.AnswerService;
-import ru.skilanov.spring.service.AnswerServiceImpl;
+import ru.skilanov.spring.service.api.AnswerService;
+import ru.skilanov.spring.service.implementation.AnswerServiceImpl;
 
 import static org.junit.jupiter.api.Assertions.*;
 

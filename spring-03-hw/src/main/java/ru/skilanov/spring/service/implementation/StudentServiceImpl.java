@@ -1,7 +1,8 @@
-package ru.skilanov.spring.service;
+package ru.skilanov.spring.service.implementation;
 
 import org.springframework.stereotype.Service;
 import ru.skilanov.spring.model.Student;
+import ru.skilanov.spring.service.api.StudentService;
 
 @Service
 public class StudentServiceImpl implements StudentService {

@@ -1,6 +1,8 @@
-package ru.skilanov.spring.service;
+package ru.skilanov.spring.service.implementation;
 
 import org.springframework.stereotype.Service;
+import ru.skilanov.spring.service.api.IOService;
+import ru.skilanov.spring.service.api.LocalizationService;
 
 import java.util.Scanner;
 

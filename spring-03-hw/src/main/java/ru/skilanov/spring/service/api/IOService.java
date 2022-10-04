@@ -1,4 +1,4 @@
-package ru.skilanov.spring.service;
+package ru.skilanov.spring.service.api;
 
 public interface IOService {
 

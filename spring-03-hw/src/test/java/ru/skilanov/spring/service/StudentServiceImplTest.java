@@ -2,10 +2,9 @@ package ru.skilanov.spring.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import ru.skilanov.spring.model.Student;
-import ru.skilanov.spring.service.StudentService;
-import ru.skilanov.spring.service.StudentServiceImpl;
+import ru.skilanov.spring.service.api.StudentService;
+import ru.skilanov.spring.service.implementation.StudentServiceImpl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

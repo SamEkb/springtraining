@@ -3,6 +3,7 @@ package ru.skilanov.spring.dao;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import ru.skilanov.spring.model.Question;
 import ru.skilanov.spring.dao.reader.FileReader;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+@Component
 public class QuestionDaoImpl implements QuestionDao {
     private final FileReader fileReader;
 
