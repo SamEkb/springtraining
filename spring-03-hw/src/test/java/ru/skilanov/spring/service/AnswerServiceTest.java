@@ -1,24 +1,26 @@
 package ru.skilanov.spring.service;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import ru.skilanov.spring.service.api.AnswerService;
-import ru.skilanov.spring.service.implementation.AnswerServiceImpl;
+import ru.skilanov.spring.service.api.QuestionService;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 public class AnswerServiceTest {
 
     public static final String LONDON_ANSWER = "London";
 
     public static final String DUBLIN_ANSWER = "Dublin";
 
-    private AnswerService answerService;
+    @MockBean
+    private QuestionService questionService;
 
-    @BeforeEach
-    void setUp() {
-        answerService = new AnswerServiceImpl();
-    }
+    @Autowired
+    private AnswerService answerService;
 
     @Test
     public void whenAddAnswerItAdded() {
