@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AnswerServiceTest {
 
     public static final String LONDON_ANSWER = "London";
-
     public static final String DUBLIN_ANSWER = "Dublin";
 
     @MockBean

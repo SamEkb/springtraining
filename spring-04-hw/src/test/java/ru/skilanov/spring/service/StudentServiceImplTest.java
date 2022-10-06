@@ -15,7 +15,6 @@ public class StudentServiceImplTest {
 
     public static final String FIRST_NAME = "Bilbo";
     public static final String LAST_NAME = "Baggins";
-
     public static final String FULL_NAME = "Bilbo Baggins";
 
     @MockBean
