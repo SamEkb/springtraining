@@ -9,10 +9,10 @@ import ru.skilanov.spring.service.api.QuestionService;
 
 @ShellComponent
 @Component
-public class TestRunner implements CommandLineRunner {
+public class QuestionTestRunner implements CommandLineRunner {
     private final QuestionService questionService;
 
-    public TestRunner(QuestionService questionService) {
+    public QuestionTestRunner(QuestionService questionService) {
         this.questionService = questionService;
     }
 

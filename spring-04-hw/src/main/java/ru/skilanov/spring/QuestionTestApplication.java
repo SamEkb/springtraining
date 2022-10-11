@@ -7,8 +7,8 @@ import ru.skilanov.spring.config.AppConfig;
 
 @SpringBootApplication
 @EnableConfigurationProperties(AppConfig.class)
-public class Application {
+public class QuestionTestApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(QuestionTestApplication.class, args);
 	}
 }
