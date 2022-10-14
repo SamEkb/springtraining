@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import ru.skilanov.spring.dao.api.AuthorDao;
 import ru.skilanov.spring.dao.api.BookDao;
-import ru.skilanov.spring.dao.api.GenreDao;
 import ru.skilanov.spring.model.Author;
 import ru.skilanov.spring.model.Book;
 import ru.skilanov.spring.model.Genre;
+import ru.skilanov.spring.service.api.AuthorService;
+import ru.skilanov.spring.service.api.GenreService;
 import ru.skilanov.spring.service.impl.BookServiceImpl;
 
 import java.util.List;
@@ -31,9 +31,9 @@ public class BookServiceImplTest {
     @MockBean
     private BookDao bookDao;
     @MockBean
-    private AuthorDao authorDao;
+    private AuthorService authorService;
     @MockBean
-    private GenreDao genreDao;
+    private GenreService genreService;
     @Autowired
     private BookServiceImpl bookService;
 

@@ -1,30 +1,32 @@
 package ru.skilanov.spring.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.skilanov.spring.dao.api.AuthorDao;
 import ru.skilanov.spring.dao.api.BookDao;
-import ru.skilanov.spring.dao.api.GenreDao;
+import ru.skilanov.spring.model.Author;
 import ru.skilanov.spring.model.Book;
+import ru.skilanov.spring.model.Genre;
+import ru.skilanov.spring.service.api.AuthorService;
 import ru.skilanov.spring.service.api.BookService;
+import ru.skilanov.spring.service.api.GenreService;
 
 import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
     private final BookDao bookDao;
-    private final AuthorDao authorDao;
-    private final GenreDao genreDao;
+    private final AuthorService authorService;
+    private final GenreService genreService;
 
-    public BookServiceImpl(BookDao bookDao, AuthorDao authorDao, GenreDao genreDao) {
+    public BookServiceImpl(BookDao bookDao, AuthorService authorService, GenreService genreService) {
         this.bookDao = bookDao;
-        this.authorDao = authorDao;
-        this.genreDao = genreDao;
+        this.authorService = authorService;
+        this.genreService = genreService;
     }
 
     @Override
     public void create(String title, long authorId, long genreId) {
-        var author = authorDao.getById(authorId);
-        var genre = genreDao.getById(genreId);
+        Author author = authorService.get(authorId);
+        Genre genre = genreService.get(genreId);
         var book = new Book(title, author, genre);
         bookDao.insert(book);
     }
