@@ -3,10 +3,10 @@ package ru.skilanov.spring.dao;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.transaction.annotation.Transactional;
-import ru.skilanov.spring.config.TestContainersConfig;
 import ru.skilanov.spring.dao.impl.BookDaoImpl;
 import ru.skilanov.spring.dao.impl.GenreDaoImpl;
 import ru.skilanov.spring.model.Genre;
@@ -18,8 +18,11 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 @DisplayName("Genres dao test")
+@SpringBootTest(
+        webEnvironment = SpringBootTest.WebEnvironment.NONE
+)
 @Import({GenreDaoImpl.class, BookDaoImpl.class})
-public class GenreDaoImplTest extends TestContainersConfig {
+public class GenreDaoImplTest {
     public static final int DEFAULT_ID_ONE = 1;
     public static final int DEFAULT_ID_TWO = 2;
     public static final String DEFAULT_GENRE_DRAMA = "Drama";
