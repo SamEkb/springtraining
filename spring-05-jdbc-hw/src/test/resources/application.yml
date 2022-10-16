@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:14-alpine:///testdb"
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog/db.changelog-master.yml
+  shell:
+    interactive:
+      enabled: false
