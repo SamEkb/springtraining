@@ -1,6 +1,7 @@
 package ru.skilanov.spring.service.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.skilanov.spring.dao.api.BookDao;
 import ru.skilanov.spring.model.Author;
 import ru.skilanov.spring.model.Book;
@@ -23,6 +24,7 @@ public class BookServiceImpl implements BookService {
         this.genreService = genreService;
     }
 
+    @Transactional
     @Override
     public void create(String title, long authorId, long genreId) {
         Author author = authorService.get(authorId);
