@@ -11,7 +11,7 @@
 	<groupId>ru.skilanov</groupId>
 	<artifactId>spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring</name>
+	<name>hw3</name>
 	<description>hw3</description>
 	<properties>
 		<java.version>11</java.version>

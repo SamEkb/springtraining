@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
     <groupId>ru.skilanov</groupId>
-    <artifactId>spring</artifactId>
+    <artifactId>hw5</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hw5</name>
     <description>hw5</description>
