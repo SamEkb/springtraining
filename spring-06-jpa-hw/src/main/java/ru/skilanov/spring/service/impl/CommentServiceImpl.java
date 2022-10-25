@@ -9,8 +9,6 @@ import ru.skilanov.spring.model.Comment;
 import ru.skilanov.spring.service.api.BookService;
 import ru.skilanov.spring.service.api.CommentService;
 
-import java.util.List;
-
 @Service
 public class CommentServiceImpl implements CommentService {
     private final CommentDao commentDao;

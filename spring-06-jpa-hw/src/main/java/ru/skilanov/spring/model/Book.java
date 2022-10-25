@@ -5,7 +5,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "books")
-@NamedEntityGraph(name= "bookPropertiesEntityGraph", attributeNodes={
+@NamedEntityGraph(name = "bookPropertiesEntityGraph", attributeNodes = {
         @NamedAttributeNode("author"),
         @NamedAttributeNode("genre")
 })

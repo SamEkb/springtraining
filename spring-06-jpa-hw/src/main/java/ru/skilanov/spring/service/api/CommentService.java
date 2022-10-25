@@ -2,8 +2,6 @@ package ru.skilanov.spring.service.api;
 
 import ru.skilanov.spring.model.Comment;
 
-import java.util.List;
-
 public interface CommentService {
     void create(String name, long bookId);
 

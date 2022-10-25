@@ -7,7 +7,6 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.Import;
-import org.springframework.transaction.annotation.Transactional;
 import ru.skilanov.spring.PostgresSQLContainerInitializer;
 import ru.skilanov.spring.dao.impl.AuthorDaoImpl;
 import ru.skilanov.spring.model.Author;

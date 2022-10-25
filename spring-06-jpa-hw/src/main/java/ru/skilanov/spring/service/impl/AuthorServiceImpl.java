@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.skilanov.spring.dao.api.AuthorDao;
 import ru.skilanov.spring.exception.AuthorDoesNotExistException;
-import ru.skilanov.spring.exception.BookDoesNotExistException;
 import ru.skilanov.spring.model.Author;
 import ru.skilanov.spring.service.api.AuthorService;
 

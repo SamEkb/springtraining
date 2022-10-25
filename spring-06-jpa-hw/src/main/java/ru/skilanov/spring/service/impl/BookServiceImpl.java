@@ -33,6 +33,7 @@ public class BookServiceImpl implements BookService {
         var book = new Book(title, author, genre);
         bookDao.save(book);
     }
+
     @Transactional
     @Override
     public void update(Book book) {
