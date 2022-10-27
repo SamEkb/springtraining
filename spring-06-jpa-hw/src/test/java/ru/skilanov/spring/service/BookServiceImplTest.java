@@ -81,8 +81,11 @@ public class BookServiceImplTest {
     @DisplayName("Delete book")
     @Test
     public void whenDeleteBookThenItDeleted() {
-        doNothing().when(bookDao).deleteById(anyLong());
+        Book book1 = new Book(ONE, BOOK_TITLE_KARENINA, new Author(""), new Genre(""));
+        when(bookDao.getById(anyLong())).thenReturn(Optional.of(book1));
+        Book book = bookService.get(ONE);
+        doNothing().when(bookDao).delete(book);
         bookService.delete(ONE);
-        verify(bookDao, times(ONE)).deleteById(anyLong());
+        verify(bookDao, times(ONE)).delete(book);
     }
 }

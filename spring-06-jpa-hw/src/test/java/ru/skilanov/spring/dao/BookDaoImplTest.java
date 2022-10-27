@@ -77,7 +77,9 @@ class BookDaoImplTest implements PostgresSQLContainerInitializer {
     @DisplayName("Deletes expected book by id")
     @Test
     void shouldCorrectDeleteBookById() {
-        bookDao.deleteById(DEFAULT_ID_ONE);
+        Book bookForDeleting = testEntityManager.find(Book.class, DEFAULT_ID_ONE);
+
+        bookDao.delete(bookForDeleting);
 
         Book deletedBook = testEntityManager.find(Book.class, DEFAULT_ID_ONE);
 

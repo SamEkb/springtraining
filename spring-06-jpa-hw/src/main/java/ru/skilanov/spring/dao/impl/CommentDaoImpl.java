@@ -33,9 +33,7 @@ public class CommentDaoImpl implements CommentDao {
     }
 
     @Override
-    public void deleteById(long id) {
-        Query query = entityManager.createQuery("delete from Comment where id = :id");
-        query.setParameter("id", id);
-        query.executeUpdate();
+    public void delete(Comment comment) {
+        entityManager.remove(comment);
     }
 }

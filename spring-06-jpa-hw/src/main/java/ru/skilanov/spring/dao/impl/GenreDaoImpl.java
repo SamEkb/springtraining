@@ -6,7 +6,6 @@ import ru.skilanov.spring.model.Genre;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
@@ -42,9 +41,7 @@ public class GenreDaoImpl implements GenreDao {
     }
 
     @Override
-    public void deleteById(long id) {
-        Query query = entityManager.createQuery("delete from Genre g where g.id = :id");
-        query.setParameter("id", id);
-        query.executeUpdate();
+    public void delete(Genre genre) {
+        entityManager.remove(genre);
     }
 }

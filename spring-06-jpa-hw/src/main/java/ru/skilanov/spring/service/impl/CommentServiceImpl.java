@@ -35,6 +35,7 @@ public class CommentServiceImpl implements CommentService {
     @Transactional
     @Override
     public void delete(long id) {
-        commentDao.deleteById(id);
+        Comment comment = commentDao.getById(id).orElseThrow(CommentDoesNotExistException::new);
+        commentDao.delete(comment);
     }
 }

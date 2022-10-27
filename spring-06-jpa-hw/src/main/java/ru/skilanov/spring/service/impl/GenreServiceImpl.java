@@ -37,6 +37,7 @@ public class GenreServiceImpl implements GenreService {
     @Transactional
     @Override
     public void delete(long id) {
-        genreDao.deleteById(id);
+        Genre genre = genreDao.getById(id).orElseThrow(GenreDoesNotExistException::new);
+        genreDao.delete(genre);
     }
 }

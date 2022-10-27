@@ -53,6 +53,7 @@ public class BookServiceImpl implements BookService {
     @Transactional
     @Override
     public void delete(long id) {
-        bookDao.deleteById(id);
+        Book book = bookDao.getById(id).orElseThrow(BookDoesNotExistException::new);
+        bookDao.delete(book);
     }
 }

@@ -53,7 +53,9 @@ public class AuthorDaoImplTest implements PostgresSQLContainerInitializer {
     @DisplayName("Deletes expected author by id")
     @Test
     void shouldCorrectDeleteAuthorById() {
-        authorDao.deleteById(DEFAULT_ID_ONE);
+        Author authorForDeleting = testEntityManager.find(Author.class, DEFAULT_ID_ONE);
+
+        authorDao.delete(authorForDeleting);
 
         Author deletedAuthor = testEntityManager.find(Author.class, DEFAULT_ID_ONE);
 

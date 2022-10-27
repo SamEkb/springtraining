@@ -58,7 +58,8 @@ public class CommentDaoImplTest implements PostgresSQLContainerInitializer {
     @DisplayName("Deletes expected comment by id")
     @Test
     void shouldCorrectDeleteCommentById() {
-        commentDao.deleteById(DEFAULT_ID_ONE);
+        Comment commentForDeleting = testEntityManager.find(Comment.class, DEFAULT_ID_ONE);
+        commentDao.delete(commentForDeleting);
 
         Comment deletedComment = testEntityManager.find(Comment.class, DEFAULT_ID_ONE);
 

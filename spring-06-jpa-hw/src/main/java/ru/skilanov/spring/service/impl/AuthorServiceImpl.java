@@ -37,6 +37,7 @@ public class AuthorServiceImpl implements AuthorService {
     @Transactional
     @Override
     public void delete(long id) {
-        authorDao.deleteById(id);
+        Author author = authorDao.getById(id).orElseThrow(AuthorDoesNotExistException::new);
+        authorDao.delete(author);
     }
 }

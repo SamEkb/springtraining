@@ -6,9 +6,9 @@ import java.util.Optional;
 
 public interface CommentDao {
 
-    Comment save(Comment author);
+    Comment save(Comment comment);
 
     Optional<Comment> getById(long id);
 
-    void deleteById(long id);
+    void delete(Comment comment);
 }

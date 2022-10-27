@@ -55,7 +55,9 @@ public class GenreDaoImplTest implements PostgresSQLContainerInitializer {
     @Transactional
     @Test
     void shouldCorrectDeleteGenreById() {
-        genreDao.deleteById(DEFAULT_ID_ONE);
+        Genre genreForDeleting = testEntityManager.find(Genre.class, DEFAULT_ID_ONE);
+
+        genreDao.delete(genreForDeleting);
 
         Genre deletedGenre = testEntityManager.find(Genre.class, DEFAULT_ID_ONE);
 

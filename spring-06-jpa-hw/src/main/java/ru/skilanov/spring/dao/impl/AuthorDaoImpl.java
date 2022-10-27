@@ -42,9 +42,7 @@ public class AuthorDaoImpl implements AuthorDao {
     }
 
     @Override
-    public void deleteById(long id) {
-        Query query = entityManager.createQuery("delete from Author a where a.id = :id");
-        query.setParameter("id", id);
-        query.executeUpdate();
+    public void delete(Author author) {
+        entityManager.remove(author);
     }
 }
