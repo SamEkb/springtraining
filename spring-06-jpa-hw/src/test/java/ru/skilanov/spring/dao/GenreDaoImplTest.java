@@ -3,12 +3,10 @@ package ru.skilanov.spring.dao;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.Transactional;
-import ru.skilanov.spring.PostgresSQLContainerInitializer;
 import ru.skilanov.spring.dao.impl.GenreDaoImpl;
 import ru.skilanov.spring.model.Genre;
 
@@ -19,9 +17,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Genres dao test")
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Import({GenreDaoImpl.class})
-public class GenreDaoImplTest implements PostgresSQLContainerInitializer {
+public class GenreDaoImplTest {
     public static final long DEFAULT_ID_ONE = 1;
     public static final long DEFAULT_ID_TWO = 2;
     public static final String DEFAULT_GENRE_DRAMA = "Drama";

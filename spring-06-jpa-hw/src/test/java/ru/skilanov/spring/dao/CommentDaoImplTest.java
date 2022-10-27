@@ -3,11 +3,9 @@ package ru.skilanov.spring.dao;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.Import;
-import ru.skilanov.spring.PostgresSQLContainerInitializer;
 import ru.skilanov.spring.dao.api.BookDao;
 import ru.skilanov.spring.dao.api.CommentDao;
 import ru.skilanov.spring.dao.impl.BookDaoImpl;
@@ -20,9 +18,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Comments dao test")
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Import({CommentDaoImpl.class, BookDaoImpl.class})
-public class CommentDaoImplTest implements PostgresSQLContainerInitializer {
+public class CommentDaoImplTest {
 
     public static final String EXPECTED_DESCRIPTION_ONE = "cool";
     public static final String EXPECTED_DESCRIPTION_TWO = "horrible";

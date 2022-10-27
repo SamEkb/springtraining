@@ -3,11 +3,9 @@ package ru.skilanov.spring.dao;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.Import;
-import ru.skilanov.spring.PostgresSQLContainerInitializer;
 import ru.skilanov.spring.dao.impl.AuthorDaoImpl;
 import ru.skilanov.spring.dao.impl.BookDaoImpl;
 import ru.skilanov.spring.dao.impl.GenreDaoImpl;
@@ -20,9 +18,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Books dao test")
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Import({BookDaoImpl.class, AuthorDaoImpl.class, GenreDaoImpl.class})
-class BookDaoImplTest implements PostgresSQLContainerInitializer {
+class BookDaoImplTest {
 
     public static final long DEFAULT_ID_ONE = 1;
     public static final long DEFAULT_ID_TWO = 2;
@@ -70,8 +67,9 @@ class BookDaoImplTest implements PostgresSQLContainerInitializer {
         Book expectedBook = new Book(DEFAULT_ID_ONE, BOOK_TITLE_WAR_AND_PEACE,
                 authorDao.getById(DEFAULT_ID_ONE).orElse(null),
                 genreDao.getById(DEFAULT_ID_ONE).orElse(null));
+
         Optional<Book> actualBook = bookDao.getById(expectedBook.getId());
-        actualBook.ifPresent(it -> assertThat(it).usingRecursiveComparison().isEqualTo(expectedBook));
+        actualBook.ifPresent(it -> assertThat(it.getTitle()).isEqualTo(expectedBook.getTitle()));
     }
 
     @DisplayName("Deletes expected book by id")

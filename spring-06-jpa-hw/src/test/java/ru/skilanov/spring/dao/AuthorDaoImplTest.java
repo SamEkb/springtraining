@@ -3,11 +3,9 @@ package ru.skilanov.spring.dao;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.Import;
-import ru.skilanov.spring.PostgresSQLContainerInitializer;
 import ru.skilanov.spring.dao.impl.AuthorDaoImpl;
 import ru.skilanov.spring.model.Author;
 
@@ -18,9 +16,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Authors dao test")
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Import({AuthorDaoImpl.class})
-public class AuthorDaoImplTest implements PostgresSQLContainerInitializer {
+public class AuthorDaoImplTest {
     public static final long DEFAULT_ID_ONE = 1;
     public static final long DEFAULT_ID_TWO = 2;
     public static final String EXPECTED_AUTHOR_DOSTOEVSKY = "Dostoevsky";
