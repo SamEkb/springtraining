@@ -41,7 +41,6 @@ public class CommentServiceImpl implements CommentService {
         commentDao.delete(comment);
     }
 
-    @Transactional(readOnly = true)
     @Override
     public List<Comment> getByBookId(long id) {
         return bookService.get(id).getComments();
