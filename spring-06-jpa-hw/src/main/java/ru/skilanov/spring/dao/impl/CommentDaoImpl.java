@@ -1,15 +1,14 @@
 package ru.skilanov.spring.dao.impl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 import ru.skilanov.spring.dao.api.CommentDao;
 import ru.skilanov.spring.model.Comment;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.util.Optional;
 
-@Repository
+@Component
 public class CommentDaoImpl implements CommentDao {
     @PersistenceContext
     private final EntityManager entityManager;

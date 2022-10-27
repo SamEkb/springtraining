@@ -93,6 +93,11 @@ public class UserInterfaceRunner {
         commentService.create(description, bookId);
     }
 
+    @ShellMethod(value = "Get comments", key = {"get_comment_by_book_id", "gcbbi"})
+    public List<Comment> getCommentsByBookId(long bookId) {
+        return commentService.getByBookId(bookId);
+    }
+
     @ShellMethod(value = "Get comment", key = {"get_comment", "gc"})
     public Comment getComment(long id) {
         return commentService.get(id);

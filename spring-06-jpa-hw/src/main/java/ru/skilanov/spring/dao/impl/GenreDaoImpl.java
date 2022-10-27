@@ -1,6 +1,6 @@
 package ru.skilanov.spring.dao.impl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 import ru.skilanov.spring.dao.api.GenreDao;
 import ru.skilanov.spring.model.Genre;
 
@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Component
 public class GenreDaoImpl implements GenreDao {
 
     @PersistenceContext

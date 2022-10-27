@@ -3,7 +3,7 @@ package ru.skilanov.spring.service.impl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.skilanov.spring.dao.api.AuthorDao;
-import ru.skilanov.spring.exception.AuthorDoesNotExistException;
+import ru.skilanov.spring.exception.ObjectDoesNotExistException;
 import ru.skilanov.spring.model.Author;
 import ru.skilanov.spring.service.api.AuthorService;
 
@@ -26,7 +26,7 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public Author get(long id) {
-        return authorDao.getById(id).orElseThrow(AuthorDoesNotExistException::new);
+        return authorDao.getById(id).orElseThrow(ObjectDoesNotExistException::new);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class AuthorServiceImpl implements AuthorService {
     @Transactional
     @Override
     public void delete(long id) {
-        Author author = authorDao.getById(id).orElseThrow(AuthorDoesNotExistException::new);
+        Author author = authorDao.getById(id).orElseThrow(ObjectDoesNotExistException::new);
         authorDao.delete(author);
     }
 }

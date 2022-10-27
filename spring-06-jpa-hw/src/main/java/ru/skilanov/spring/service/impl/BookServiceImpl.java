@@ -3,7 +3,7 @@ package ru.skilanov.spring.service.impl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.skilanov.spring.dao.api.BookDao;
-import ru.skilanov.spring.exception.BookDoesNotExistException;
+import ru.skilanov.spring.exception.ObjectDoesNotExistException;
 import ru.skilanov.spring.model.Author;
 import ru.skilanov.spring.model.Book;
 import ru.skilanov.spring.model.Genre;
@@ -42,7 +42,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book get(long id) {
-        return bookDao.getById(id).orElseThrow(BookDoesNotExistException::new);
+        return bookDao.getById(id).orElseThrow(ObjectDoesNotExistException::new);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class BookServiceImpl implements BookService {
     @Transactional
     @Override
     public void delete(long id) {
-        Book book = bookDao.getById(id).orElseThrow(BookDoesNotExistException::new);
+        Book book = bookDao.getById(id).orElseThrow(ObjectDoesNotExistException::new);
         bookDao.delete(book);
     }
 }

@@ -1,17 +1,16 @@
 package ru.skilanov.spring.dao.impl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 import ru.skilanov.spring.dao.api.AuthorDao;
 import ru.skilanov.spring.model.Author;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Component
 public class AuthorDaoImpl implements AuthorDao {
 
     @PersistenceContext

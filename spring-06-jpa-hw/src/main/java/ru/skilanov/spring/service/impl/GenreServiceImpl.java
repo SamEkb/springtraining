@@ -3,7 +3,7 @@ package ru.skilanov.spring.service.impl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.skilanov.spring.dao.api.GenreDao;
-import ru.skilanov.spring.exception.GenreDoesNotExistException;
+import ru.skilanov.spring.exception.ObjectDoesNotExistException;
 import ru.skilanov.spring.model.Genre;
 import ru.skilanov.spring.service.api.GenreService;
 
@@ -26,7 +26,7 @@ public class GenreServiceImpl implements GenreService {
 
     @Override
     public Genre get(long id) {
-        return genreDao.getById(id).orElseThrow(GenreDoesNotExistException::new);
+        return genreDao.getById(id).orElseThrow(ObjectDoesNotExistException::new);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class GenreServiceImpl implements GenreService {
     @Transactional
     @Override
     public void delete(long id) {
-        Genre genre = genreDao.getById(id).orElseThrow(GenreDoesNotExistException::new);
+        Genre genre = genreDao.getById(id).orElseThrow(ObjectDoesNotExistException::new);
         genreDao.delete(genre);
     }
 }
