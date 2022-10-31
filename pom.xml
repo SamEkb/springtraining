@@ -22,6 +22,7 @@
         <module>spring-04-hw</module>
         <module>spring-05-jdbc-hw</module>
         <module>spring-06-jpa-hw</module>
+        <module>spring-07-data-jpa-hw</module>
     </modules>
 
 </project>
