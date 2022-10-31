@@ -17,11 +17,10 @@ public class AuthorServiceImpl implements AuthorService {
         this.authorRepository = authorRepository;
     }
 
-    @Transactional
     @Override
     public void create(String name) {
         var author = new Author(name);
-        authorRepository.saveAndFlush(author);
+        authorRepository.save(author);
     }
 
     @Override
@@ -34,7 +33,6 @@ public class AuthorServiceImpl implements AuthorService {
         return authorRepository.findAll();
     }
 
-    @Transactional
     @Override
     public void delete(long id) {
         Author author = authorRepository.findById(id).orElseThrow(ObjectDoesNotExistException::new);

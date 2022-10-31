@@ -17,7 +17,6 @@ public class GenreServiceImpl implements GenreService {
         this.genreRepository = genreRepository;
     }
 
-    @Transactional
     @Override
     public void create(String name) {
         var genre = new Genre(name);
@@ -34,7 +33,6 @@ public class GenreServiceImpl implements GenreService {
         return genreRepository.findAll();
     }
 
-    @Transactional
     @Override
     public void delete(long id) {
         Genre genre = genreRepository.findById(id).orElseThrow(ObjectDoesNotExistException::new);

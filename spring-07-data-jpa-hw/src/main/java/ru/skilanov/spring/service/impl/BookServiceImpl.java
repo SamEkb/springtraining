@@ -25,7 +25,6 @@ public class BookServiceImpl implements BookService {
         this.genreService = genreService;
     }
 
-    @Transactional
     @Override
     public void create(String title, long authorId, long genreId) {
         Author author = authorService.get(authorId);
@@ -34,7 +33,6 @@ public class BookServiceImpl implements BookService {
         bookRepository.save(book);
     }
 
-    @Transactional
     @Override
     public void update(Book book) {
         bookRepository.save(book);
@@ -50,7 +48,6 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findAll();
     }
 
-    @Transactional
     @Override
     public void delete(long id) {
         Book book = bookRepository.findById(id).orElseThrow(ObjectDoesNotExistException::new);

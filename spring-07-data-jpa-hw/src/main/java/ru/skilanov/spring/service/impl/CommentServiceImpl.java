@@ -21,7 +21,6 @@ public class CommentServiceImpl implements CommentService {
         this.bookService = bookService;
     }
 
-    @Transactional
     @Override
     public void create(String name, long bookId) {
         Book commentedBook = bookService.get(bookId);
@@ -34,7 +33,6 @@ public class CommentServiceImpl implements CommentService {
         return commentRepository.findById(id).orElseThrow(ObjectDoesNotExistException::new);
     }
 
-    @Transactional
     @Override
     public void delete(long id) {
         Comment comment = commentRepository.findById(id).orElseThrow(ObjectDoesNotExistException::new);
