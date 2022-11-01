@@ -1,0 +1,57 @@
+databaseChangeLog:
+- changeSet:
+    id: 2022-10-12--001-authors-test-data
+    author: kilanov
+    context: test
+    runOnChange: true
+    loadUpdateData:
+      primaryKey: id
+      file: data/2022-10-12--001-authors.csv
+      relativeToChangelogFile: true
+      separator: ;
+      quotChar: '"'
+      seperator: ';'
+      encoding: UTF-8
+      tableName: authors
+- changeSet:
+    id: 2022-10-12--001-genres-test-data
+    author: kilanov
+    context: test
+    runOnChange: true
+    loadUpdateData:
+      primaryKey: id
+      file: data/2022-10-12--001-genres.csv
+      relativeToChangelogFile: true
+      separator: ;
+      quotChar: '"'
+      seperator: ';'
+      encoding: UTF-8
+      tableName: genres
+- changeSet:
+    id: 2022-10-12--001-books-test-data
+    author: kilanov
+    context: test
+    runOnChange: true
+    loadUpdateData:
+      primaryKey: id
+      file: data/2022-10-12--001-books.csv
+      relativeToChangelogFile: true
+      separator: ;
+      quotChar: '"'
+      seperator: ';'
+      encoding: UTF-8
+      tableName: books
+- changeSet:
+    id: 2022-10-25--001-comments-test-data
+    author: kilanov
+    context: test
+    runOnChange: true
+    loadUpdateData:
+      primaryKey: id
+      file: data/2022-10-25--001-comments.csv
+      relativeToChangelogFile: true
+      separator: ;
+      quotChar: '"'
+      seperator: ';'
+      encoding: UTF-8
+      tableName: comments
