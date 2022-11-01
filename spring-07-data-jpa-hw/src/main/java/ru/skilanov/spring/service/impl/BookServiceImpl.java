@@ -25,6 +25,7 @@ public class BookServiceImpl implements BookService {
         this.genreService = genreService;
     }
 
+    @Transactional
     @Override
     public void create(String title, long authorId, long genreId) {
         Author author = authorService.get(authorId);
