@@ -23,6 +23,7 @@
         <module>spring-05-jdbc-hw</module>
         <module>spring-06-jpa-hw</module>
         <module>spring-07-data-jpa-hw</module>
+        <module>spring-08-data-mongo-hw</module>
     </modules>
 
 </project>
