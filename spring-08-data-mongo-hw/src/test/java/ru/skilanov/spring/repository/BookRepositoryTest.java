@@ -75,7 +75,7 @@ class BookRepositoryTest {
     @DisplayName("Returns expected book")
     @Test
     void shouldReturnExpectedBookById() {
-        Book expectedBook = new Book(DEFAULT_ID_ONE, BOOK_TITLE_WAR_AND_PEACE,
+        Book expectedBook = new Book(DEFAULT_ID_ONE, BOOK_TITLE_KARENINA,
                 authorRepository.findById(DEFAULT_ID_ONE).orElse(null),
                 genreRepository.findById(DEFAULT_ID_ONE).orElse(null));
 
