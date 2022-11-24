@@ -1,0 +1,29 @@
+databaseChangeLog:
+- changeSet:
+    id: 2022-10-12--001-authors-data
+    author: kilanov
+    context: test
+    runOnChange: true
+    loadUpdateData:
+      primaryKey: id
+      file: data/2022-10-12--001-authors.csv
+      relativeToChangelogFile: true
+      separator: ;
+      quotChar: '"'
+      seperator: ';'
+      encoding: UTF-8
+      tableName: authors
+- changeSet:
+    id: 2022-10-12--001-genres-data
+    author: kilanov
+    context: test
+    runOnChange: true
+    loadUpdateData:
+      primaryKey: id
+      file: data/2022-10-12--001-genres.csv
+      relativeToChangelogFile: true
+      separator: ;
+      quotChar: '"'
+      seperator: ';'
+      encoding: UTF-8
+      tableName: genres
